@@ -9,36 +9,33 @@ const dataForTimeline = [
   {
     time: '09:00',
     title: 'Archery Training',
-    description:
-      'The Beginner Archery and Beginner Crossbow course does not require you to bring any equipment, since everything you need will be provided for the course. ',
+    description: 'Completed',
     lineColor: '#009688',
-    icon: require('../assets/images/arrowleft.png'),
+    icon: require('../assets/images/check.png'),
   },
   {
     time: '10:45',
     title: 'Play Badminton',
-    description:
-      'Badminton is a racquet sport played using racquets to hit a shuttlecock across a net.',
-    icon: require('../assets/images/arrowleft.png'),
+    description: 'Completed',
+    icon: require('../assets/images/check.png'),
   },
   {
     time: '12:00',
     title: 'Lunch',
-    icon: require('../assets/images/arrowleft.png'),
+    icon: require('../assets/images/current.png'),
   },
   {
     time: '14:00',
     title: 'Watch Soccer',
-    description:
-      'Team sport played between two teams of eleven players with a spherical ball. ',
+    description: 'Completed',
     lineColor: '#009688',
-    icon: require('../assets/images/arrowleft.png'),
+    icon: require('../assets/images/locked.png'),
   },
   {
     time: '16:30',
     title: 'Go to Fitness center',
-    description: 'Look out for the Best Gym & Fitness Centers around me :)',
-    icon: require('../assets/images/arrowleft.png'),
+    description: 'Completed',
+    icon: require('../assets/images/locked.png'),
   },
 ];
 
@@ -54,7 +51,13 @@ const Card = () => {
         // onEventPress={async obj => { this.checkTimeoutFunc(obj, topicDetails); }}
         data={dataForTimeline}
         // onPress={async obj => { this.checkTimeoutFunc(obj, topicDetails); }}
-        // titleStyle={[{ paddingTop: 0, marginLeft: 20, marginTop: Platform.OS === 'android' ? -12 : -10 }, styles.listText,]}
+        titleStyle={[
+          {
+            paddingTop: 0,
+            marginLeft: 20,
+            marginTop: Platform.OS === 'android' ? -12 : -10,
+          },
+        ]}
         // listViewStyle={{ fontFamily: fontType.gilroyRegular }}
         // detailContainerStyle={{ fontFamily: fontType.gilroyRegular }}
         timeStyle={{paddingLeft: 10, borderRadius: 13, padding: 0}}
