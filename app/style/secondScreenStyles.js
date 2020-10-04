@@ -21,4 +21,18 @@ export const secondScreenStyles = StyleSheet.create({
     marginVertical: 10,
     color: colors.white,
   },
+  cardW: {
+    backgroundColor: colors.white,
+
+    marginHorizontal: 20,
+    marginVertical: 10,
+  },
+  cardHead: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  cardHeadT: {
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
 });
