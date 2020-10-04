@@ -51,29 +51,11 @@ const renderTimeLine = () => {
       innerCircle={'icon'}
       lineWidth={1}
       data={dataForTimeline}
-      titleStyle={[
-        {
-          paddingTop: 0,
-          marginLeft: 20,
-          marginTop: Platform.OS === 'android' ? -12 : -10,
-        },
-      ]}
-      listViewStyle={{marginLeft: 10, marginTop: 20}}
-      timeStyle={{paddingLeft: 10, borderRadius: 13, padding: 0}}
-      descriptionStyle={{
-        color: 'gray',
-        paddingTop: 0,
-        marginBottom: 20,
-        marginLeft: 20,
-        fontSize: 12,
-        margin: 0,
-      }}
-      iconStyle={{
-        backgroundColor: '#fff',
-        width: 18,
-        height: 18,
-        marginTop: 2,
-      }}
+      titleStyle={secondScreenStyles.titleS}
+      listViewStyle={secondScreenStyles.lisV}
+      timeStyle={secondScreenStyles.timeS}
+      descriptionStyle={secondScreenStyles.descSty}
+      iconStyle={secondScreenStyles.icStt}
     />
   );
 };

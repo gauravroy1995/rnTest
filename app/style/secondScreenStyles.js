@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import {colors} from './colors';
 
 export const secondScreenStyles = StyleSheet.create({
@@ -37,5 +37,33 @@ export const secondScreenStyles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     marginVertical: 20,
+  },
+  titleS: {
+    paddingTop: 0,
+    marginLeft: 20,
+    marginTop: Platform.OS === 'android' ? -12 : -10,
+  },
+  lisV: {
+    marginLeft: 10,
+    marginTop: 20,
+  },
+  timeS: {
+    paddingLeft: 10,
+    borderRadius: 13,
+    padding: 0,
+  },
+  descSty: {
+    color: 'gray',
+    paddingTop: 0,
+    marginBottom: 20,
+    marginLeft: 20,
+    fontSize: 12,
+    margin: 0,
+  },
+  icStt: {
+    backgroundColor: '#fff',
+    width: 18,
+    height: 18,
+    marginTop: 2,
   },
 });
