@@ -25,12 +25,10 @@ export const SecondHeader = props => {
       <Pressable onPress={props.onPress}>
         <Image
           source={require('../assets/images/chevronleft.png')}
-          style={firstScreenStyles.first}
+          style={secondScreenStyles.first}
         />
       </Pressable>
-      <Text style={firstScreenStyles.tetx}>Chapter 1</Text>
-      <View style={firstScreenStyles.bar} />
-      <Text style={firstScreenStyles.tetx2}>Random Text</Text>
+      <Text style={secondScreenStyles.tetx}>UX Fundamentals </Text>
     </View>
   );
 };
