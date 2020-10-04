@@ -31,14 +31,14 @@ const dataForTimeline = [
   {
     time: '14:00',
     title: 'Watch Soccer',
-    description: 'Completed',
+    description: '3 Hr 2 Mins',
     lineColor: colors.lineBold,
     icon: require('../assets/images/locked.png'),
   },
   {
     time: '16:30',
     title: 'Go to Fitness center',
-    description: 'Completed',
+    description: '3 Hr 2 Mins',
     lineColor: colors.lineBold,
     icon: require('../assets/images/locked.png'),
   },
