@@ -33,6 +33,14 @@ export const SecondHeader = props => {
   );
 };
 
+export const WidthButton = props => {
+  return (
+    <Pressable style={secondScreenStyles.keepL}>
+      <Text>Keep Learning</Text>
+    </Pressable>
+  );
+};
+
 export const BottomTab = () => {
   return (
     <View

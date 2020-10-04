@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Platform} from 'react-native';
 import {colors} from './colors';
+import {color} from 'react-native-reanimated';
 
 export const secondScreenStyles = StyleSheet.create({
   header: {
@@ -65,5 +66,8 @@ export const secondScreenStyles = StyleSheet.create({
     width: 18,
     height: 18,
     marginTop: 2,
+  },
+  keepL: {
+    backgroundColor: colors.theme,
   },
 });
