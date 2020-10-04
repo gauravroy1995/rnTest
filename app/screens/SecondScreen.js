@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {View, Text, Button, Image, ScrollView, Pressable} from 'react-native';
-import {Header, BottomTab} from '../components/globalComponents';
+import {Header, BottomTab, SecondHeader} from '../components/globalComponents';
 import {firstScreenStyles} from '../style/firstScreenStyle';
 import {secondScreenStyles} from '../style/secondScreenStyles';
 
@@ -23,7 +23,7 @@ const TextStatic = () => {
 const SecondScreen = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
-      <Header onPress={() => navigation.navigate('Home')} />
+      <SecondHeader onPress={() => navigation.navigate('Home')} />
       <ScrollView style={{flex: 1}}>
         <Image
           style={firstScreenStyles.mapI}
