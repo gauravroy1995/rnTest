@@ -1,8 +1,9 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
+import {colors} from './colors';
 
 export const secondScreenStyles = StyleSheet.create({
   header: {
-    backgroundColor: '#3a44f9',
+    backgroundColor: colors.theme,
   },
 });

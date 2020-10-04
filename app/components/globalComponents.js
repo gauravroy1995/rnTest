@@ -24,7 +24,7 @@ export const SecondHeader = props => {
     <View style={secondScreenStyles.header}>
       <Pressable onPress={props.onPress}>
         <Image
-          source={require('../assets/images/arrowleft.png')}
+          source={require('../assets/images/chevronleft.png')}
           style={firstScreenStyles.first}
         />
       </Pressable>
