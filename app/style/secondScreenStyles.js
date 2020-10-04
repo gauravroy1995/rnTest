@@ -69,5 +69,16 @@ export const secondScreenStyles = StyleSheet.create({
   },
   keepL: {
     backgroundColor: colors.theme,
+    marginHorizontal: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+    elevation: 10,
+    shadowColor: colors.theme,
+  },
+  keepLSt: {
+    color: colors.white,
+    marginVertical: 10,
+    fontWeight: 'bold',
   },
 });

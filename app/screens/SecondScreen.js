@@ -1,6 +1,11 @@
 import * as React from 'react';
 import {View, Text, Button, Image, ScrollView, Pressable} from 'react-native';
-import {Header, BottomTab, SecondHeader} from '../components/globalComponents';
+import {
+  Header,
+  BottomTab,
+  SecondHeader,
+  WidthButton,
+} from '../components/globalComponents';
 import {firstScreenStyles} from '../style/firstScreenStyle';
 import {secondScreenStyles} from '../style/secondScreenStyles';
 import Timeline from 'react-native-timeline-flatlist';
@@ -65,6 +70,7 @@ const Card = () => {
     <View style={secondScreenStyles.cardW}>
       {CardHeader()}
       {renderTimeLine()}
+      <WidthButton />
     </View>
   );
 };
