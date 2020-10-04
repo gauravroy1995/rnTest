@@ -30,9 +30,12 @@ export const secondScreenStyles = StyleSheet.create({
   cardHead: {
     alignItems: 'center',
     justifyContent: 'center',
+    borderBottomColor: 'rgba(0,0,0,0.2)',
+    borderBottomWidth: 0.3,
   },
   cardHeadT: {
     fontWeight: 'bold',
     fontSize: 18,
+    marginVertical: 20,
   },
 });
