@@ -11,11 +11,14 @@
     "android:bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/app.bundle"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "^3.0.3",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.7.5",
     "@react-navigation/stack": "^5.9.2",
+    "moment": "^2.29.1",
     "react": "16.13.1",
     "react-native": "0.63.3",
+    "react-native-daterange-picker": "^1.4.0",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-reanimated": "^1.13.1",
     "react-native-safe-area-context": "^3.1.8",

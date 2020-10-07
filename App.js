@@ -11,9 +11,36 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="FirstScreen" component={FirstScreen} />
+      <Stack.Navigator
+        // screenOptions={{headerShown: false}}
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#0a0a0a',
+            elevation: 12,
+          },
+          headerTitleStyle: {
+            fontWeight: 'bold',
+            color: '#fff',
+          },
+        }}>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{title: 'Users'}}
+        />
+        <Stack.Screen
+          name="FirstScreen"
+          component={FirstScreen}
+          options={({route}) => ({
+            title: route.params.name,
+            headerTintColor: '#36e4ff',
+            headerTitleStyle: {marginLeft: '11%'},
+            headerStyle: {
+              elevation: 12,
+              backgroundColor: '#0a0a0a',
+            },
+          })}
+        />
         <Stack.Screen name="SecondScreen" component={SecondScreen} />
       </Stack.Navigator>
     </NavigationContainer>

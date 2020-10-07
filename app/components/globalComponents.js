@@ -41,6 +41,13 @@ export const WidthButton = props => {
   );
 };
 
+export const BottonButtons = props => {
+  return (
+    <Pressable onPress={props.onPress} style={firstScreenStyles.pressN}>
+      <Text style={firstScreenStyles.textStNN}>{props.title}</Text>
+    </Pressable>
+  );
+};
 export const BottomTab = () => {
   return (
     <View
