@@ -19,7 +19,9 @@ class HomeScreen extends React.Component {
   displayUser = (item, index, props) => {
     return (
       <Pressable
-        style={homeScreenStyle.card}
+        style={
+          item.isBooked ? homeScreenStyle.cardBooked : homeScreenStyle.card
+        }
         onPress={() => this.props.navigation.navigate('FirstScreen')}>
         <View>
           <Text style={homeScreenStyle.nameT}>{item.slot}</Text>

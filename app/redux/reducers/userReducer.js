@@ -16,7 +16,7 @@ const INITIAL_STATE = {
     },
     {
       slot: '11am-12pm',
-      isBooked: false,
+      isBooked: true,
       name: '',
       phone: '',
     },
@@ -52,12 +52,15 @@ const INITIAL_STATE = {
       phone: '',
     },
   ],
+  userSelectedIndex: '',
 };
 
 export const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case types.SAVE_USER_NAME:
       return {...state, timeSlotArray: action.payload};
+    case types.SAVE_INDEX:
+      return {...state, userSelectedIndex: action.payload};
 
     default:
       return state;

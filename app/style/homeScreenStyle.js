@@ -19,6 +19,16 @@ export const homeScreenStyle = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  cardBooked: {
+    backgroundColor: '#d41a0d',
+    marginHorizontal: 20,
+    borderRadius: 20,
+    marginVertical: 10,
+    elevation: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   nameT: {
     fontSize: 16,
     fontWeight: 'bold',
