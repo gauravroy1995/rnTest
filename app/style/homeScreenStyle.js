@@ -23,7 +23,7 @@ export const homeScreenStyle = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginLeft: 20,
-    marginTop: 10,
+    marginVertical: 10,
     color: '#36e4ff',
   },
   nameSecon: {

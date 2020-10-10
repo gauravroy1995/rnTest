@@ -26,13 +26,15 @@ function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: 'Users'}}
+          options={{title: 'Time Slots'}}
         />
         <Stack.Screen
           name="FirstScreen"
           component={FirstScreen}
+          screenOptions={{headerShown: false}}
+          // options={{headerShown: false}}
           options={({route}) => ({
-            title: route.params.name,
+            title: 'Title',
             headerTintColor: '#36e4ff',
             headerTitleStyle: {marginLeft: '11%'},
             headerStyle: {
