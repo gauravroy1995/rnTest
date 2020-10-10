@@ -10,11 +10,17 @@ import {
 } from 'react-native';
 import {staticData} from '../assets/staticJson/testData';
 import {homeScreenStyle} from '../style/homeScreenStyle';
+import {saveIndex} from '../redux/actions/userAction';
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
 class HomeScreen extends React.Component {
+  onSlotPress = index => {
+    this.props.saveIndex(index);
+    this.props.navigation.navigate('FirstScreen');
+  };
+
   //display each user
   displayUser = (item, index, props) => {
     return (
@@ -22,7 +28,7 @@ class HomeScreen extends React.Component {
         style={
           item.isBooked ? homeScreenStyle.cardBooked : homeScreenStyle.card
         }
-        onPress={() => this.props.navigation.navigate('FirstScreen')}>
+        onPress={() => this.onSlotPress(index)}>
         <View>
           <Text style={homeScreenStyle.nameT}>{item.slot}</Text>
           {/* <Text style={homeScreenStyle.nameSecon}>{item.tz}</Text> */}
@@ -52,16 +58,12 @@ const mapStateToProps = state => {
   return {userReducer};
 };
 
-// const mapDispatchToProps = dispatch =>
-//   bindActionCreators(
-//     {
-//       saveEmail,
-//       showLoader,
-//       hideLoader,
-//       onLoginButtonPress,
-//       onOtpSend,
-//     },
-//     dispatch,
-//   );
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      saveIndex,
+    },
+    dispatch,
+  );
 
-export default connect(mapStateToProps, null)(HomeScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);

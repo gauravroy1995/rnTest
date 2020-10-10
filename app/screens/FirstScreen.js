@@ -10,11 +10,10 @@ import {
   FlatList,
   TextInput,
 } from 'react-native';
-import {Header, BottomTab, BottonButtons} from '../components/globalComponents';
-import {firstScreenStyles} from '../style/firstScreenStyle';
-import DateTimePicker from '@react-native-community/datetimepicker';
-import moment from 'moment';
-import {getMonthInd} from '../functions/globalFunctions';
+
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {saveSlotsArr} from '../redux/actions/userAction';
 
 class FirstScreen extends React.Component {
   constructor(props) {
@@ -27,12 +26,33 @@ class FirstScreen extends React.Component {
   }
   componentDidMount() {
     // this.setState({});
+    const {userSelectedIndex, timeSlotArray} = this.props.userReducer;
+    let nameUser = timeSlotArray[userSelectedIndex].name;
+    let phoneUser = timeSlotArray[userSelectedIndex].phone;
+    this.setState({
+      name: nameUser,
+      phone: phoneUser,
+    });
   }
 
   onTextCHange = (text, type) => {
     this.setState({
       [type]: text,
     });
+  };
+
+  onPress = () => {
+    const {timeSlotArray, userSelectedIndex} = this.props.userReducer;
+    const {phone, name} = this.state;
+    const existingArr = [...timeSlotArray];
+    existingArr[userSelectedIndex] = {
+      phone: phone,
+      name: name,
+      slot: timeSlotArray[userSelectedIndex].slot,
+      isBooked: true,
+    };
+
+    this.props.saveSlotsArr(existingArr);
   };
 
   render() {
@@ -50,9 +70,25 @@ class FirstScreen extends React.Component {
           value={phone}
           onChangeText={text => this.onTextCHange(text, 'phone')}
         />
+        <Pressable onPress={this.onPress}>
+          <Text>Save</Text>
+        </Pressable>
       </View>
     );
   }
 }
 
-export default FirstScreen;
+const mapStateToProps = state => {
+  const {userReducer} = state;
+  return {userReducer};
+};
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      saveSlotsArr,
+    },
+    dispatch,
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(FirstScreen);
