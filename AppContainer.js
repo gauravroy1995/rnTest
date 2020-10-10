@@ -4,6 +4,7 @@ import {Alert, ActivityIndicator, View, Text} from 'react-native';
 import App from './App';
 
 import {Provider} from 'react-redux';
+import {GlobalToast} from './app/components/toast';
 import {createStore, applyMiddleware} from 'redux';
 
 import combinedReducers from './app/redux/reducers/combineReducer';
@@ -20,6 +21,7 @@ export default class AppContainer extends PureComponent {
     return (
       <Provider store={store}>
         <App />
+        <GlobalToast />
       </Provider>
     );
   }

@@ -34,9 +34,9 @@ function App() {
           screenOptions={{headerShown: false}}
           // options={{headerShown: false}}
           options={({route}) => ({
-            title: 'Title',
+            title: 'Book a slot',
             headerTintColor: '#36e4ff',
-            headerTitleStyle: {marginLeft: '11%'},
+            headerTitleStyle: {marginLeft: 0},
             headerStyle: {
               elevation: 12,
               backgroundColor: '#0a0a0a',

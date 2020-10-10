@@ -14,6 +14,7 @@ import {TextInputMod, BottonButtons} from '../components/globalComponents';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {saveSlotsArr} from '../redux/actions/userAction';
+import {showToaster} from '../components/toast';
 
 class FirstScreen extends React.Component {
   constructor(props) {
@@ -44,15 +45,31 @@ class FirstScreen extends React.Component {
   onPress = () => {
     const {timeSlotArray, userSelectedIndex} = this.props.userReducer;
     const {phone, name} = this.state;
-    const existingArr = [...timeSlotArray];
-    existingArr[userSelectedIndex] = {
-      phone: phone,
-      name: name,
-      slot: timeSlotArray[userSelectedIndex].slot,
-      isBooked: true,
-    };
+    let isNameValid = false;
+    let isPhoneValid = false;
 
-    this.props.saveSlotsArr(existingArr);
+    if (phone.trim()) {
+      isPhoneValid = true;
+    }
+
+    if (name.trim()) {
+      isNameValid = true;
+    }
+
+    if (isNameValid && isPhoneValid) {
+      const existingArr = [...timeSlotArray];
+      existingArr[userSelectedIndex] = {
+        phone: phone,
+        name: name,
+        slot: timeSlotArray[userSelectedIndex].slot,
+        isBooked: true,
+      };
+
+      this.props.saveSlotsArr(existingArr);
+      this.props.navigation.goBack();
+    } else {
+      showToaster('Please enter a valid phone and name');
+    }
   };
 
   render() {
@@ -63,11 +80,13 @@ class FirstScreen extends React.Component {
           placeholder="Enter name"
           value={name}
           onChangeText={text => this.onTextCHange(text, 'name')}
+          numeric={false}
         />
         <TextInputMod
           placeholder="Enter phone"
           value={phone}
           onChangeText={text => this.onTextCHange(text, 'phone')}
+          numeric={true}
         />
 
         <BottonButtons title="Save Slot" onPress={this.onPress} />

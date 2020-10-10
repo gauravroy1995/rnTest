@@ -64,6 +64,7 @@ export const TextInputMod = props => {
         value={props.value}
         onChangeText={props.onChangeText}
         style={{width: '60%'}}
+        keyboardType={props.numeric ? 'numeric' : 'default'}
       />
     </View>
   );
