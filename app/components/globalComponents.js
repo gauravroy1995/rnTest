@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Text, Button, Image, Pressable} from 'react-native';
+import {View, Text, Button, Image, Pressable, TextInput} from 'react-native';
 import {firstScreenStyles} from '../style/firstScreenStyle';
 import {secondScreenStyles} from '../style/secondScreenStyles';
 
@@ -46,6 +46,26 @@ export const BottonButtons = props => {
     <Pressable onPress={props.onPress} style={firstScreenStyles.pressN}>
       <Text style={firstScreenStyles.textStNN}>{props.title}</Text>
     </Pressable>
+  );
+};
+
+export const TextInputMod = props => {
+  return (
+    <View
+      style={{
+        marginHorizontal: 20,
+        width: '80%',
+        backgroundColor: '#d1d1d1',
+        marginVertical: 15,
+        borderRadius: 5,
+      }}>
+      <TextInput
+        placeholder={props.placeholder}
+        value={props.value}
+        onChangeText={props.onChangeText}
+        style={{width: '60%'}}
+      />
+    </View>
   );
 };
 export const BottomTab = () => {

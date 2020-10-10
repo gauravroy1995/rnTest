@@ -77,8 +77,9 @@ export const firstScreenStyles = StyleSheet.create({
     justifyContent: 'center',
   },
   textStNN: {
-    color: '#00ff44',
-    marginHorizontal: 10,
-    marginVertical: 5,
+    color: '#36e4ff',
+    marginHorizontal: 20,
+    marginVertical: 10,
+    fontSize: 16,
   },
 });

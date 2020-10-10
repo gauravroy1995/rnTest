@@ -10,7 +10,7 @@ import {
   FlatList,
   TextInput,
 } from 'react-native';
-
+import {TextInputMod, BottonButtons} from '../components/globalComponents';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {saveSlotsArr} from '../redux/actions/userAction';
@@ -58,21 +58,19 @@ class FirstScreen extends React.Component {
   render() {
     const {phone, name} = this.state;
     return (
-      <View style={{flex: 1}}>
-        <Text>Hey</Text>
-        <TextInput
+      <View style={{flex: 1, alignItems: 'center'}}>
+        <TextInputMod
           placeholder="Enter name"
           value={name}
           onChangeText={text => this.onTextCHange(text, 'name')}
         />
-        <TextInput
+        <TextInputMod
           placeholder="Enter phone"
           value={phone}
           onChangeText={text => this.onTextCHange(text, 'phone')}
         />
-        <Pressable onPress={this.onPress}>
-          <Text>Save</Text>
-        </Pressable>
+
+        <BottonButtons title="Save Slot" onPress={this.onPress} />
       </View>
     );
   }
