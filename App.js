@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './app/screens/Home';
 import FirstScreen from './app/screens/FirstScreen';
 import SecondScreen from './app/screens/SecondScreen';
+import TestScreen from './app/screens/TestScreen';
 
 const Stack = createStackNavigator();
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
+        initialRouteName="Home"
         // screenOptions={{headerShown: false}}
         screenOptions={{
           headerStyle: {
@@ -44,6 +46,7 @@ function App() {
           })}
         />
         <Stack.Screen name="SecondScreen" component={SecondScreen} />
+        <Stack.Screen name="TestScreen" component={TestScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

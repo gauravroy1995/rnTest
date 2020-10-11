@@ -15,6 +15,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {saveSlotsArr} from '../redux/actions/userAction';
 import {showToaster} from '../components/toast';
+import ImagePicker from 'react-native-image-crop-picker';
 
 class FirstScreen extends React.Component {
   constructor(props) {
@@ -40,6 +41,16 @@ class FirstScreen extends React.Component {
     this.setState({
       [type]: text,
     });
+  };
+
+  onImagePick = async () => {
+    ImagePicker.openPicker({
+      multiple: true,
+      cropping: false,
+      mediaType: 'photo',
+    })
+      .then(images => {})
+      .catch(err => {});
   };
 
   onPress = () => {
@@ -90,6 +101,8 @@ class FirstScreen extends React.Component {
         />
 
         <BottonButtons title="Save Slot" onPress={this.onPress} />
+        <View style={{height: 40}} />
+        <BottonButtons title="Open Image selector" onPress={this.onImagePick} />
       </View>
     );
   }
